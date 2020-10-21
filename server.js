@@ -3,6 +3,7 @@ const server = require('express');
 const hbs = require('hbs');
 require('./hbs/helpers');
 const app = server();
+const port = process.env.PORT || 5000;
 const appName = 'Aprendiendo NodeJS - Curso';
 
 app.use(server.static(`${__dirname}/public`));
@@ -25,6 +26,6 @@ app.get('/contact', (req,res) => {
 });
 // #endregion Routes
 
-app.listen(5000, () => {
-  console.log('App is running on port 5000');
+app.listen(port, () => {
+  console.log(`App is running on port ${port}`);
 });
